@@ -5,7 +5,7 @@
     <x:Property Name="in_item" Type="InArgument(x:String)" />
     <x:Property Name="io_dt_UserDetails" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>787.2,1083.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>792,1083.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -164,7 +164,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">100,694.4 100,724.4 300,724.4 300,763.6</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Extract New Rows" sap:VirtualizedContainerService.HintSize="375.2,868.8" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence DisplayName="Extract New Rows" sap:VirtualizedContainerService.HintSize="524.8,1212" sap2010:WorkflowViewState.IdRef="Sequence_18">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="index" />
                       <Variable x:TypeArguments="x:String" Name="strNameList" />
@@ -174,7 +174,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Extracting and Updating user details" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Extracting and Updating user details&quot;]">
+                    <ui:LogMessage DisplayName="Extracting and Updating user details" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Extracting and Updating user details&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -182,7 +182,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <Assign DisplayName="Initialize invalid email addresses list" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+                    <Assign DisplayName="Initialize invalid email addresses list" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_32">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strNameList]</OutArgument>
                       </Assign.To>
@@ -190,7 +190,7 @@
                         <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:FilterDataTable DataTable="[dt_CowinRegistrationFile]" DisplayName="Remove Unnecessary Columns" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="333.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_CowinRegistrationFile]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable DataTable="[dt_CowinRegistrationFile]" DisplayName="Remove Unnecessary Columns" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="483.2,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_CowinRegistrationFile]" SelectColumnsMode="Remove">
                       <ui:FilterDataTable.Filters>
                         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                           <ui:FilterOperationArgument BooleanOperator="And" Operator="GT">
@@ -217,8 +217,8 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FilterDataTable>
-                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="District" DataTable="[dt_CowinRegistrationFile]" DisplayName="Add District Data Column" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[dt_CowinRegistrationFile]" DisplayName="For Each Row in New User Details Datatable" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="District" DataTable="[dt_CowinRegistrationFile]" DisplayName="Add District Data Column" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[dt_CowinRegistrationFile]" DisplayName="For Each Row in New User Details Datatable" sap:VirtualizedContainerService.HintSize="483.2,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
@@ -388,29 +388,29 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEachRow>
-                    <If Condition="[strNameList isnot Nothing]" DisplayName="Send technical failure email for wrong email address" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_11">
+                    <ui:LogMessage DisplayName="No invalid email addresses" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Name list of invalid email addresses : &quot;+ strNameList]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <If Condition="[strNameList isnot Nothing]" DisplayName="Send technical failure email for wrong email address" sap:VirtualizedContainerService.HintSize="483.2,263.2" sap2010:WorkflowViewState.IdRef="If_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Invoke Business Failure" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Function\Common\SendEmail.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_emailType">
-                              <Literal x:TypeArguments="x:String">BusinessFailure</Literal>
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_emailType">BusinessFailure</InArgument>
                             <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_VaccineDetails" />
-                            <InArgument x:TypeArguments="x:String" x:Key="in_userEmailAddresses">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;Cowin_Support_EmailAddress&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="s:String[]" x:Key="in_emailBodyReplacements">
-                              <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{in_config(&quot;ErrorMessage_InvalidEmailAddress&quot;).ToString+strNameList}" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_userEmailAddresses">[in_config("Cowin_Support_EmailAddress").ToString]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
+                            <InArgument x:TypeArguments="s:String[]" x:Key="in_emailBodyReplacements">[{in_config("ErrorMessage_InvalidEmailAddress").ToString+strNameList}]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_emailSubjectReplacement" />
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
@@ -422,7 +422,7 @@
                         </ui:InvokeWorkflowFile>
                       </If.Then>
                     </If>
-                    <ui:LogMessage DisplayName="Updated Details" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Updated Cowin Excelsheet&quot;]">
+                    <ui:LogMessage DisplayName="Updated Details" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Updated Cowin Excelsheet&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
